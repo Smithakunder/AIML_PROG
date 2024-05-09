@@ -30,7 +30,7 @@ def astar(start_node,stop_node):
             return None
         if n==stop_node:
             path=[]
-            while prents[n]!=n:
+            while parents[n]!=n:
                 path.append(n)
                 n=parents[n]
             path.append(start_node)
@@ -43,11 +43,11 @@ def astar(start_node,stop_node):
     return None
 def get_neighbours(v):
     if v in graph_nodes:
-        return gaph_nodes[v]
+        return graph_nodes[v]
     else:
         return None
 def heuristic(n):
-    H-dist={
+    H_dist={
         'A':10,
         'B':8,
         'C':5,
@@ -69,6 +69,6 @@ graph_nodes={
     'F':[('G',1),('H',7)],
     'G':[('I',3)],
     'H':[('I',2)],
-    'I':[('E',5),('J',3)],
+    'I':[('E',5),('J',3)]
 }
-astarAlgo('A','J')
+astar('A','J')
