@@ -30,7 +30,7 @@ YY,XX = np.meshgrid(yy,xx)
 xy = np.vstack([XX.ravel(),YY.ravel()]).T
 Z=svm_classifier.decision_function(xy).reshape(XX.shape)
 
-ax.contour(XX,YY,Z,colors='k',levels=[-1,0,1], alpha=0.5,linestyle=['--','-','--'])
+ax.contour(XX,YY,Z,colors='k',levels=[-1,0,1], alpha=0.5,linestyles=['--','-','--'])
 
 ax.scatter(svm_classifier.support_vectors_[:,0],svm_classifier.support_vectors_[:,1],
            s=100,linewidth=1,facecolors='none',edgecolors='k')
